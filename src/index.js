@@ -63,7 +63,7 @@ function updateCity(event) {
     "A"
   )}</small></div>
       </div>
-      <a href="index.html> All Cities </a>`;
+      <a href="index.html"> All Cities </a>`;
 }
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
