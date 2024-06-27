@@ -27,8 +27,23 @@ function updateIstanbulTime() {
     );
   }
 }
+
 updateIstanbulTime();
 setInterval(updateIstanbulTime, 1000);
+
+//Seoul
+function updateSeoulTime() {
+  let seoulElement = document.querySelector("#seoul");
+  if (seoulElement) {
+    let seoulDateElement = seoulElement.querySelector(".date");
+    let seoulTimeElement = seoulElement.querySelector(".time");
+    let seoulTime = moment().tz("Asia/Seoul");
+    seoulDateElement.innerHTML = seoulTime.format("MMMM Do YYYY");
+    seoulTimeElement.innerHTML = seoulTime.format("h:mm:ss [<small>]A</small>");
+  }
+}
+updateSeoulTime();
+setInterval(updateSeoulTime, 1000);
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
